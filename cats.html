@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cats</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+</head>
+<body>
+    <header>
+        <img width="200px" src="logo_refined.svg">
+        <nav>
+            <a href="index.html"><i class="fa-solid fa-house"></i>&nbsp; Home </a>&nbsp;
+            <a href="Adopt.html"><i class="fa-solid fa-dog"></i>Adoption</a>&nbsp;
+            <a href="test2.html">About Us</a>&nbsp;
+            <a href="login.html"><i class="fa-solid fa-user"></i>&nbsp;Login</a>
+        </nav>
+    </header>
+<section class="animal-gallery">
+    <h2>Meet Our Cats</h2>
+    <div class="animal-container">
+      <div class="animal-card" >
+        <img src="Siamesecat.jpg" alt="Dog 1">
+        <h3>Buddy</h3>
+        <p>Siamese Cat, 2 years old</p>
+      </div>
+      <div class="animal-card">
+        <img src="ragdoll_cat.jpg" alt="Cat 1">
+        <h3>Whiskers</h3>
+        <p>Ragdoll Cat, 1 year old</p>
+      </div>
+      <div class="animal-card">
+        <img src="bristish_shorthair.jpg" alt="Dog 2">
+        <h3>Max</h3>
+        <p>Bristish Shorthair, 3 years old</p>
+      </div>
+      <div class="animal-card">
+        <img src="persian_cat.jpg" alt="Cat 2">
+        <h3>Luna</h3>
+        <p>Persian Cat, 2 years old</p>
+      </div>
+      <div class="animal-card">
+        <img src="birman.jpg" alt="Cat 2">
+        <h3>Cleo</h3>
+        <p>Birman Cat, 2 years old</p>
+      </div>
+      <div class="animal-card">
+        <img src="munchkin_cat.jpg" alt="Cat 2">
+        <h3>Zoe</h3>
+        <p>Munchkin Cat, 2 years old</p>
+      </div>
+      <!-- Add more animal cards as needed -->
+    </div>
+  </section>
+  </body>
+  <style>
+    body {
+      font-family: 'Poppins',sans-serif;
+    }
+
+    .animal-gallery {
+  padding: 2rem;
+  background: #f9f9f9;
+  text-align: center;
+}
+
+.animal-gallery h2 {
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+}
+
+.animal-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem; /* Space between animal cards */
+  justify-content: center;
+}
+
+.animal-card {
+  flex: 1 1 calc(25% - 2rem); /* Adjusts for 4 cards per row with space */
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.animal-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px 8px 0 0;
+}
+
+.animal-card h3 {
+  margin: 0.5rem 0;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.animal-card p {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.animal-card:hover {
+  transform: scale(1.05); /* Slight zoom effect on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+header nav {
+    width: 30%;
+    margin-right: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+header nav a {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;  
+    cursor: pointer;
+    text-decoration: none;
+}
+header nav a:nth-child(1) {
+    color: blue;
+}
+header nav a:hover {
+    color: blue;
+}
+header nav a:nth-child(4) {
+    background-color: blue;
+    padding: 10px 20px;
+    border-radius: 50px;
+    color: white;
+}
+  </style>
+  

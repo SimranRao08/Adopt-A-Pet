@@ -1,0 +1,278 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: white;
+    font-family: "Poppins", sans-serif;
+}
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.adopted-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 50px;
+}
+
+.adopted-info h1 {
+    text-align: center;
+    color:blue;
+}
+
+.adopted-info h2 {
+    color: blue;
+}
+header nav {
+    width: 30%;
+    margin-right: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+header nav a {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;  
+    cursor: pointer;
+    text-decoration: none;
+}
+header nav a:nth-child(1) {
+    color: blue;
+}
+header nav a:hover {
+    color: blue;
+}
+header nav a:last-child {
+    background-color: blue;
+    padding: 10px 20px;
+    border-radius: 50px;
+    color: white;
+}
+.home-page {
+    background: url('home-adopt.png')no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding: 60px 10px;
+}
+.home-page .showcase {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+.home-page .showcase-info h2 {
+    text-align: center;
+    padding: 10px 10px 0px 10px;
+    font-size: 32px;
+    color: white;
+    text-transform: uppercase;
+    position: relative;
+}
+.home-page .showcase-info h2::before {
+    content: "___";
+    font-family: Arial;
+    position: absolute;
+    left: 25%;
+    top: -2px;
+}
+.home-page .showcase-info h2::after {
+    content: "____";
+    position: absolute;
+    font-family: Arial;
+    right: 25%;
+    top: -2px;
+}
+.home-page .showcase-info p {
+    text-align: center;
+    color: white;
+    font-size: 22px;
+    padding: 0px 10px 10px 10px;
+}
+.adoption-info {
+    margin: 6% 0px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.card {
+    padding: 30px;
+    width: 1200px;
+    height: 500px;
+    background: white;
+    border-radius: 10px;
+    transition: border-radius 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.shadow {
+    box-shadow: inset 0 -3em 3em rgba(0,0,0,0.1),
+                0 0  0 2px rgb(190, 190, 190),
+                0.3em 0.3em 1em rgba(0,0,0,0.3);
+}
+
+.adoption-info h2 {
+    font-size: 32px;
+    text-transform: uppercase;
+    position: relative;
+}
+.adoption-info p {
+    color: rgb(113, 113, 113);
+    font-size: 18px;
+}
+.adoption-info h2::before {
+    content: "____";
+    position: absolute;
+    font-family: Arial; 
+    left: 28%;
+    top: -1px;
+    font-size: 22px;
+    color: blue;
+}
+.adoption-info h2::after {
+    content: "____";
+    position: absolute;
+    font-family: Arial;
+    right: 28%;
+    top: -2px;
+    font-size: 22px;
+    color: blue;
+}
+.info-card {
+    width: 400px;
+    padding: .4em;
+    border-radius: 6px;
+    display: inline-block;
+    margin: 10px 50px 10px 10px;
+}
+
+.card-image {
+    width: 100%;
+    height: 130px;
+    transition: .2s ease;
+}
+
+.card-image:hover {
+    transform: scale(0.98);
+}
+
+.heading {
+    font-weight: 600;
+    color: rgb(88, 87, 87);
+    padding: 7px;
+}
+
+.heading:hover {
+    cursor: pointer;
+}
+footer {
+    border-top: 1px solid grey;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 20px 0px;
+}
+footer .footer-col-1{
+    margin-left: 60px;
+    margin-right: 60px;
+}
+footer .footer-col-1 h3 {
+    color: blue;
+    font-size: 32px;
+}
+footer .footer-col-1 a {
+    color: inherit;
+    text-decoration: none;
+    color: blue;
+}
+footer .footer-col-2 {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    background-color: rgba(173, 216, 230, 0.504);
+    padding: 60px 0px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+footer .footer-col .footer-link-1 {
+    display: flex;
+    margin: 20px;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+footer h5{
+    font-size: 16px;
+}
+.footer-link-1 a{
+    display: block;
+    cursor: pointer;
+    font-size: 16px;
+    
+    text-decoration: none;
+    color: rgb(88, 87, 87)
+}
+footer a:hover {
+    color: blue;
+}
+
+footer ion-icon {
+    font-size:42px;
+    color: rgb(113, 113, 113);
+    cursor: pointer;
+}
+footer ion-icon:hover {
+    color: blue;
+}
+
+
+@media only screen and (max-width: 768px) {
+    header nav {
+        flex-direction: column;
+        width: 100%;
+        margin-right: 0;
+    }
+    .home-page .showcase {
+        flex-direction: column;
+    }
+    .home-page .showcase img {
+        width: 100%;
+    }
+    .adoption-info {
+        flex-direction: column;
+    }
+    .card {
+        width: 100%;
+        height: auto;
+    }
+    .info-card {
+        width: 100%;
+        margin: 10px 0;
+    }
+    .adoption-info h2::before {
+        content: "";
+    }
+    .adoption-info h2::after {
+        content: "";
+    }
+    .home-page .showcase-info h2::before {
+        content: "";
+        font-family: Arial;
+        position: absolute;
+        left: 30%;
+        top: -2px;
+    }
+    .home-page .showcase-info h2::after {
+        content: "";
+    }
+    footer {
+        flex-direction: column;
+    }
+    footer .footer-col-2 {
+        flex-direction: column;
+    }
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Parallax Scrolling</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      overflow-x: hidden;
+    }
+
+    .parallax {
+      /* Set a background image */
+      background-image: url('para.jpg');
+      height: 100vh; /* Full viewport height */
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    .content {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #f4f4f4;
+      color: #333;
+      font-size: 24px;
+    }
+
+    .content:nth-child(even) {
+      background-color: #ddd;
+    }
+  </style>
+</head>
+<body>
+  <div class="parallax"></div>
+  <div class="content">
+    <p>This is regular content. Scroll to see the parallax effect!</p>
+  </div>
+  <div class="parallax"></div>
+  <div class="content">
+    <p>Another content section. Keep scrolling!</p>
+  </div>
+</body>
+</html>

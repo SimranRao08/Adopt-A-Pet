@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adopt a Pet</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f9;
+    }
+    header {
+      background-color: #ffcc99;
+      padding: 20px;
+      text-align: center;
+      color: #333;
+    }
+    h1 {
+      margin: 0;
+      font-size: 36px;
+    }
+    h2 {
+      margin: 0;
+      font-size: 24px;
+      color: #4a4a4a;
+    }
+    .main-content {
+      text-align: center;
+      padding: 40px 20px;
+    }
+    .instructions {
+      background-color: #ffffff;
+      padding: 20px;
+      margin: 20px auto;
+      border-radius: 10px;
+      width: 80%;
+      max-width: 700px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+    .instructions h3 {
+      color: #4a4a4a;
+      font-size: 28px;
+    }
+    .pet-links {
+      text-align: left;
+      padding-left: 20px;
+      font-size: 18px;
+    }
+    .pet-links a {
+      color: #ff6600;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .pet-links a:hover {
+      text-decoration: underline;
+    }
+    .carousel-inner img {
+      width: 100%;
+      height: 400px; /* Reduced height */
+      object-fit: cover; /* Ensures images scale proportionally */
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Adopt a Pet</h1>
+    <h2>Don't Shop, Adopt!</h2>
+  </header>
+  <!-- Carousel Section -->
+  <div class="container">
+    <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="3000"> <!-- Auto-rotate every 3 seconds -->
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+      </ol>
+
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner">
+        <div class="item active">
+          <img src="adpt.jpg" alt="First Pet">
+        </div>
+
+        <div class="item">
+          <img src="para.jpg" alt="Second Pet">
+        </div>
+
+        <div class="item">
+          <img src="animals-png.png" alt="Third Pet">
+        </div>
+      </div>
+
+      <!-- Left and right controls -->
+      <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="right carousel-control" href="#myCarousel" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+
+  <div class="main-content">
+    <h2>#AdoptDontShop</h2>
+    <p>If you are an animal lover and looking to get a pet for your home, consider adopting one. There are many wonderful pets waiting for you to take them home.</p>
+
+    <div class="instructions">
+      <h3>Instructions</h3>
+      <p>You can check out all our babies by clicking on each animal (scroll down).</p>
+      <p>1. Click on any picture for more information.</p>
+      <p>2. Fill out our application form. Click on the links below.</p>
+      <p>3. You will be called once you are shortlisted.</p>
+
+      <div class="pet-links">
+        <ul>
+          <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSeGsLRujEsG51U7OhSRSYjS19yc2YNyIACh4bYGJMYwO1Bs9g/viewform?usp=header" target="_blank">Dog Application Form</a></li>
+          <li><a href="cat-application-form.html" target="_blank">Cat Application Form</a></li>
+        </ul>
+      </div>
+    </div>
+
+    
+</body>
+</html>

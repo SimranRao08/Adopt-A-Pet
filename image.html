@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <title>Pet Adoption .content</title>
+</head>
+<body>
+    <header>    
+        <img width="200px" src="logo_refined.svg">
+        <nav>
+            <a>Home</a>
+            <a>Adoption</a>
+            <a>Login</a>
+        </nav>
+    </header>
+    <div class="container">
+        <div class="content">
+            <h2>Find Your Perfect Companion</h2>
+            <p>Click on a pet type to see available options for adoption!</p>
+            <img src="animals-png.png" usemap="#image-map">
+
+            <map name="image-map">
+                <area target="" alt="first cat" title="first cat" href=" link goes here " coords="155,239,129,211,118,213,117,251,122,263,116,285,119,315,124,345,118,380,116,407,144,415,190,415,264,416,250,359,236,330,243,290,233,263,227,204,199,240" shape="poly">
+                <area target="" alt="right dog" title="right dog" href=" link goes here " coords="403,410,397,352,412,299,426,231,423,205,482,204,522,217,590,216,571,255,580,299,582,335,570,358,567,399,530,414" shape="poly">
+                <area target="" alt="center dog" title="center dog" href=" link goes here " coords="270,413,241,331,247,291,241,261,245,188,211,147,207,90,235,91,280,133,338,130,385,86,402,91,402,137,392,184,384,223,395,249,398,296,394,317,387,347,388,383,377,401,366,413" shape="poly">
+                <area target="" alt="black dog" title="black dog" href=" link goes here " coords="29,414,13,387,38,341,64,303,55,269,65,251,54,224,36,229,17,219,37,194,59,178,74,173,101,168,127,166,141,174,171,173,184,195,199,215,186,231,160,231,132,210,118,214,115,235,115,260,118,276,114,303,119,337,113,360,112,397,112,409" shape="poly">
+                <area target="" alt="dog" title="dog" href=" link goes here " coords="440,163,42" shape="circle">
+                <area target="" alt="" title="backside dog" href="" coords="252,102,258,63,232,76,190,79,159,67,174,109,177,167,206,212,242,207,244,186,210,150,206,86,235,87" shape="poly">
+            </map>
+        </div>
+    </div>
+    <footer>
+        <div class="footer-col-1">
+            <h3>Connect with us</h3>
+                <p>Have questions? Mail Us</p>
+                <a href="mailto:simran.rao@bcah.christuniversity.in">simran.rao@bcah.christuniversity.in</a>
+        </div>
+        <div class="footer-col-2">
+            <div class="footer-link-1">
+                <h5>Quick Links</h5>
+                <a>Home</a>
+                <a>Adoption</a>
+                <a>Login</a>
+            </div>
+            <div class="footer-link-2">
+                <h5>Follow Us</h5>
+                <a><ion-icon name="logo-facebook"></ion-icon></a>
+                <a><ion-icon name="logo-instagram"></ion-icon></a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Poppins',sans-serif;
+    background-color: white;
+}
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+header nav {
+    width: 20%;
+    margin-right: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+header nav a {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;  
+    cursor: pointer;
+}
+header nav a:nth-child(1) {
+    color: blue;
+}
+header nav a:hover {
+    color: blue;
+}
+header nav a:nth-child(3) {
+    background-color: blue;
+    padding: 10px 20px;
+    border-radius: 50px;
+    color: white;
+    transition: .2s ease-in-out;
+}
+header nav a:nth-child(3):hover {
+    opacity: 0.7;
+}
+
+.container {
+    background: url('home-adopt.png')no-repeat;
+    background-blend-mode: color-burn;
+    background-position: center;
+    background-size: cover;
+    padding: 60px 10px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+.container .content h2 {
+    text-align: center;
+    padding: 10px 10px 0px 10px;
+    font-size: 32px;
+    color: white;
+    text-transform: uppercase;
+    position: relative;
+}
+.container .content h2::before {
+    content: "___";
+    font-family: Arial;
+    position: absolute;
+    left: -5%;
+    top: -5px;
+}
+.container .content h2::after {
+    content: "____";
+    position: absolute;
+    font-family: Arial;  
+    right: -7%;
+    top: -5px;
+}
+.container .content p {
+    text-align: center;
+    color: white;
+    font-size: 18px;
+    padding: 0px 10px 10px 10px;
+}
+
+footer {
+    border-top: 1px solid grey;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 20px 0px;
+}
+footer .footer-col-1{
+    margin-left: 60px;
+    margin-right: 60px;
+}
+footer .footer-col-1 h3 {
+    color: blue;
+    font-size: 32px;
+}
+footer .footer-col-1 a {
+    color: inherit;
+    text-decoration: none;
+    color: blue;
+}
+footer .footer-col-2 {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    background-color: rgba(173, 216, 230, 0.504);
+    padding: 60px 0px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+footer .footer-col .footer-link-1 {
+    display: flex;
+    margin: 20px;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+footer h5{
+    font-size: 16px;
+}
+.footer-link-1 a{
+    display: block;
+    cursor: pointer;
+    font-size: 16px;
+}
+footer a:hover {
+    color: blue;
+}
+
+footer ion-icon {
+    font-size:42px;
+    color: rgb(113, 113, 113);
+    cursor: pointer;
+}
+footer ion-icon:hover {
+    color: blue;
+}
+</style>

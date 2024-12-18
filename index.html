@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adopt-A-Pet</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <link rel="stylesheet" href="style.css">
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+</head>
+<body>
+    <header>
+        <img width="200px" src="logo_refined.svg">
+        <nav>
+            <a href="index.html"><i class="fa-solid fa-house"></i>&nbsp; Home </a>&nbsp;
+            <a href="adoption.html"><i class="fa-solid fa-dog"></i>Adoption</a>&nbsp;
+            <a href="test2.html">About Us</a>&nbsp;
+            <a href="login.html"><i class="fa-solid fa-user"></i>&nbsp;Login</a>
+        </nav>
+    </header>
+    <section class="home-page">
+        <div class="showcase-info">
+            <h2>Looking to Adopt a Pet?</h2>
+            <p>Explore pets up for adoption and bring your new companion home!</p>
+        </div>
+        
+        <div class="showcase">
+            <img src="adopt-showcase-new.svg">
+        </div>
+    </section>
+    <section class="adoption-info">
+        <div class="card shadow">
+            <h2>Why Pet Adoption?</h2>
+            <p>Pet adoption offers a win-win solution for both humans and animals. By choosing adoption, you save a life and combat unethical breeding practices, such as puppy mills. Additionally, adopting a pet is financially savvy, as fees often cover essential services like vaccinations and spaying/neutering.</p>
+            <div class="info-card">
+                <div class="card-image"><a href="cats.html"><img width="120px" src="kitten.png"></a></div>
+                <div class="heading"> Pet adoption isn't just about adding a furry friend to your family—it's about making a profound difference. By adopting, you're saving a life, combating unethical breeding practices, and promoting responsible pet ownership. </div>
+            </div>
+            <div class="info-card">
+                <div class="card-image"><img width="120px" src="puppy.png"></div>
+                <div class="heading"> Embrace the rewards of unconditional love, companionship, and the satisfaction of knowing you've made a positive impact. Join the movement towards a world where every pet has a loving home. Start your journey towards pet adoption today!</div>
+            </div>
+        </div>
+    </section>
+    <section class="adopted-info">
+        <div>
+            <h1 id="adopted-count1">0</h1>
+            <h2>Adoption Applications</h2>
+        </div>
+        <div>
+            <h1 id="adopted-count2">600+</h1>
+            <h2>Dogs Adopted</h2>
+        </div>
+        <div>
+            <h1 id="adopted-count3">200+</h1>
+            <h2>Cats Adopted</h2>
+        </div>
+        <div>
+            <h1 id="adopted-count4">100+</h1>
+            <h2>Foster Onboard</h2>
+        </div>
+    </section>
+    <footer>
+        <div class="footer-col-1">
+            <h3>Want to Volunteer?</h3>
+                <p>Send us an email to sign up!</p>
+                <a href="mailto:simran.rao@bcah.christuniversity.in">simran.rao@bcah.christuniversity.in</a>
+        </div>
+        <div class="footer-col-2">
+            <div class="footer-link-1">
+                <h5>Quick Links</h5>
+                <a href="test2.html">About Us</a>
+                <a href="geo.html">Location</a>
+                <a href="canvas (1).html">Donation</a>
+                <a href="image.html">Learn More</a>
+
+            </div>
+            <div class="footer-link-2">
+                <h5>Follow Us</h5>
+                <a><ion-icon name="logo-facebook"></ion-icon></a>
+                <a><ion-icon name="logo-instagram"></ion-icon></a>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
+<script>
+    const count1 = document.getElementById('adopted-count1');
+    const count2 = document.getElementById('adopted-count2');
+    const count3 = document.getElementById('adopted-count3');
+    const count4 = document.getElementById('adopted-count4');
+
+    let hasRun = false;
+
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 790 && !hasRun) {
+            hasRun = true;
+            let i1 = 1, i2 = 1, i3 = 1, i4 = 1;
+            const targetCount1 = 4000;
+            const targetCount2 = 600;
+            const targetCount3 = 200;
+            const targetCount4 = 100;
+            const duration = 10;
+            const intervalTime = 10;
+
+            const interval = setInterval(() => {
+                count1.innerHTML = i1 + '+';
+                count2.innerHTML = i2 + '+';
+                count3.innerHTML = i3 + '+';
+                count4.innerHTML = i4 + '+';
+                i1 = i1 + Math.ceil(Math.random() * 100);
+                i2 = i2 + Math.ceil(Math.random() * 5);
+                i3 = i3 + Math.ceil(Math.random() * 2);
+                i4 = i4 + Math.ceil(Math.random() * 2);
+                if (i1 > targetCount1 || i2 > targetCount2 || i3 > targetCount3 || i4 > targetCount4) {
+                    count1.innerHTML = targetCount1 + '+';
+                    count2.innerHTML = targetCount2 + '+';
+                    count3.innerHTML = targetCount3 + '+';
+                    count4.innerHTML = targetCount4 + '+';
+                    clearInterval(interval);
+                }
+            }, intervalTime);
+        }
+    });
+</script>

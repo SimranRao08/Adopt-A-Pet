@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parallax Demo</title>
+    <style>
+        body, html {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            overflow-x: hidden;
+        }
+
+        .parallax {
+            background-image: url('adpt.jpg');
+
+            height: 500px;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .content {
+            height: 400px;
+            background-color: #f4f4f4;
+            font-size: 24px;
+            color: #333;
+            padding: 20px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="parallax"></div>
+
+    <div class="content">
+        <h3 style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; color: #389dea;">Adopt-A-Pet</h3>
+        <p>At Adopt-A-Pet, we’re passionate about finding loving homes for pets in need. Our mission is to connect animals with caring families, ensuring every pet has a chance at a happy, healthy life. From playful puppies to wise senior cats, we believe every pet deserves a second chance. Join us in creating a world where every furry friend has a forever home!</p>
+        <button style="padding: 20px; background-color: #389dea; color: #f4f4f4;"><a href="index.html">Join Us</a></button>    
+    </div>
+
+    <div class="parallax" style="background-image: url('para.jpg');"></div>
+
+    <div class="content">
+        <h3 style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; color: #389dea;">Mission</h3>
+        <p>At Adopt-A-Pet, our mission is:</p>
+    
+        <ul>
+            <li>Connect loving homes with pets in need.</li>
+            <li>Promote responsible pet ownership.</li>
+        </ul>
+    
+        <ol>
+            <li>Reduce the number of animals in shelters.</li>
+            <li>Advocate for ethical adoption practices.</li>
+        </ol>
+    
+        <p>By creating a compassionate community, we strive to ensure every pet finds a safe, happy.<center> and forever home</center></p>
+    </div>
+    
+</body>
+</html>
