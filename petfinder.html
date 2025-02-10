@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Petfinder Animal Adoption</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  </head>
+  <body>
+    <header>
+      <img width="200px" src="logo_refined.svg" />
+      <nav>
+        <a>Home</a>
+        <a>Adoption</a>
+        <a>Login</a>
+      </nav>
+    </header>
+    <h1>Find Your Next Pet!</h2>
+    <div id="animal-list"></div>
+
+    <footer>
+      <div class="footer-col-1">
+        <h3>Connect with us</h3>
+        <p>Have questions? Mail Us</p>
+        <a href="mailto:simran.rao@bcah.christuniversity.in"
+          >simran.rao@bcah.christuniversity.in</a
+        >
+      </div>
+      <div class="footer-col-2">
+        <div class="footer-link-1">
+          <h5>Quick Links</h5>
+          <a>Home</a>
+          <a>Adoption</a>
+          <a>Login</a>
+        </div>
+        <div class="footer-link-2">
+          <h5>Follow Us</h5>
+          <a><ion-icon name="logo-facebook"></ion-icon></a>
+          <a><ion-icon name="logo-instagram"></ion-icon></a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
+
+<script>
+  // Function to fetch the access token
+  function fetchAccessToken() {
+    const clientId = "BEYMBCzYt9vqNzgfLGmDgPt55PhTkgdNkOUE7kCBV0D1k1bjXX";
+    const clientSecret = "BPEaocDa2z2AFNH8MrecSZwn3PqP06ALiPXvtaqG";
+
+    // URL to obtain the token
+    const tokenUrl = "https://api.petfinder.com/v2/oauth2/token";
+
+    // Create an AJAX request to get the access token
+    const xhr = new XMLHttpRequest();
+    xhr.open("POST", tokenUrl, true);
+    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
+    // Set callback to handle the response
+    xhr.onreadystatechange = function () {
+      if (xhr.readyState === 4 && xhr.status === 200) {
+        const response = JSON.parse(xhr.responseText);
+        const accessToken = response.access_token;
+
+        // Call a function to fetch animal data with the token
+        fetchAnimals(accessToken);
+      } else if (xhr.readyState === 4) {
+        console.error("Failed to fetch access token:", xhr.statusText);
+      }
+    };
+
+    // Send the request with client ID and secret
+    const body = `grant_type=client_credentials&client_id=${clientId}&client_secret=${clientSecret}`;
+    xhr.send(body);
+  }
+
+  // Function to fetch animal data
+  function fetchAnimals(accessToken) {
+    const apiUrl =
+      "https://api.petfinder.com/v2/animals?limit=100&has_photos=true";
+
+    // Create an AJAX request to fetch animals
+    const xhr = new XMLHttpRequest();
+    xhr.open("GET", apiUrl, true);
+    xhr.setRequestHeader("Authorization", `Bearer ${accessToken}`);
+
+    // Set callback to handle the response
+    xhr.onreadystatechange = function () {
+      if (xhr.readyState === 4 && xhr.status === 200) {
+        const response = JSON.parse(xhr.responseText);
+
+        // Call a function to display the animals
+        displayAnimals(response.animals);
+        console.log(response.animals);
+      } else if (xhr.readyState === 4) {
+        console.error("Failed to fetch animals:", xhr.statusText);
+      }
+    };
+
+    // Send the request
+    xhr.send();
+  }
+
+  // Function to display animals on the page
+  function displayAnimals(animals) {
+    const animalList = document.getElementById("animal-list");
+    animalList.innerHTML = ""; // Clear existing content
+
+    // Filter animals that have photos
+    const animalsWithPhotos = animals.filter(
+      (animal) => animal.photos && animal.photos.length > 0
+    );
+
+    // Display animals with photos
+    animalsWithPhotos.forEach((animal) => {
+      const div = document.createElement("div");
+      div.className = "animal";
+      div.innerHTML = `
+        <div class="card">
+            <img loading="lazy" src="${animal.photos[0].medium}" alt="${animal.name}" class="card-image">
+            <div class="card-details">
+            <h2>${animal.name}</h2>
+            <p>${animal.breeds.primary}</p>
+            <div class="info">
+                <span class="tag">${animal.type}</span>
+                <span class="tag">${animal.gender}</span>
+                <span class="tag">${animal.age}</span>
+            </div>
+            <p class="location">📍 Location: ${animal.contact.address.city}</p>
+            <div class="card-footer">
+                <span class="user">👤 Simran</span>
+            </div>
+            </div>
+        </div>`;
+
+      animalList.appendChild(div);
+    });
+
+    // If no animals with photos found, display a message
+    if (animalsWithPhotos.length === 0) {
+      animalList.textContent = "No animals with photos found.";
+    }
+  }
+
+  // Call function, when page is loaded
+  fetchAccessToken();
+</script>
+
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    height: 100vh;
+    margin: 0;
+  }
+
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid black;
+  }
+  header nav {
+    width: 20%;
+    margin-right: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+  header nav a {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    cursor: pointer;
+  }
+  header nav a:nth-child(1) {
+    color: blue;
+  }
+  header nav a:hover {
+    color: blue;
+  }
+  header nav a:nth-child(3) {
+    background-color: blue;
+    padding: 10px 20px;
+    border-radius: 50px;
+    color: white;
+  }
+
+
+h1 {
+    text-align: center;
+    padding: 10px 10px 0px 10px;
+    font-size: 32px;
+    text-transform: uppercase;
+    position: relative;
+}
+h1::before {
+    content: "___";
+    font-family: Arial;
+    position: absolute;
+    left: 32%;
+    top: -5px;
+}
+h1::after {
+    content: "____";
+    position: absolute;
+    font-family: Arial;  
+    right: 32%;
+    top: -5px;
+}
+
+  #animal-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .animal {
+    margin: 30px;
+  }
+
+  .card {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    overflow: hidden;
+    border: 1px solid black;
+    box-shadow: 1px 1px 20px 0px rgb(0, 0, 0, 0.5);;
+  }
+
+  .card-image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+  }
+
+  .card-details {
+    padding: 15px;
+  }
+
+  .card-details h2 {
+    margin: 0;
+    font-size: 20px;
+    color: #333;
+  }
+
+  .card-details p {
+    font-size: 12px;
+    margin: 0 0 0 5px;
+  }
+
+  .info {
+    margin: 10px 0;
+  }
+
+  .tag {
+    background: #f0f0f0;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 12px;
+    margin-right: 5px;
+  }
+
+  .location {
+    font-size: 14px;
+    color: #666;
+  }
+
+  .card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+  }
+
+  footer {
+    border-top: 1px solid grey;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 20px 0px;
+  }
+  footer .footer-col-1 {
+    margin-left: 60px;
+    margin-right: 60px;
+  }
+  footer .footer-col-1 h3 {
+    color: blue;
+    font-size: 32px;
+  }
+  footer .footer-col-1 a {
+    color: inherit;
+    text-decoration: none;
+    color: blue;
+  }
+  footer .footer-col-2 {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    background-color: rgba(173, 216, 230, 0.504);
+    padding: 60px 0px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+  }
+  footer .footer-col .footer-link-1 {
+    display: flex;
+    margin: 20px;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  footer h5 {
+    font-size: 16px;
+  }
+  .footer-link-1 a {
+    display: block;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  footer a:hover {
+    color: blue;
+  }
+
+  footer ion-icon {
+    font-size: 42px;
+    color: rgb(113, 113, 113);
+    cursor: pointer;
+  }
+  footer ion-icon:hover {
+    color: blue;
+  }
+</style>
